@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Pretendard:wght@300;400;500;600;700;800&family=Noto+Serif+KR:wght@400;600;700&display=swap');
+
+/* ================= VINTAGE IVORY, EMERALD & SOFT BUTTER YELLOW DESIGN SYSTEM ================= */
+:root {
+  --bg-app: #f6f3eb;
+  --bg-card: #ffffff;
+  --bg-subtle: #f0ebde;
+  
+  --border-light: #e4dcd0;
+  --border-dark: #cbd2c0;
+  
+  --text-main: #111827;
+  --text-muted: #374151;
+  --text-light: #6b7280;
+  
+  /* Dual Accent Combo: Emerald Green & Soft Eye-Soothing Butter Yellow */
+  --color-emerald: #059669;
+  --color-emerald-dark: #047857;
+  --color-emerald-light: #d1fae5;
+  
+  --color-yellow: #fef08a;        /* Soft Butter Yellow (Eye-Soothing) */
+  --color-yellow-warm: #fde047;   /* Soft Pastel Gold */
+  --color-yellow-bg: #fefce8;     /* Creamy Soft Yellow BG */
+  --color-yellow-border: #fef08a;
+  
+  --receipt-paper: #fffefb;
+  --receipt-border: #e2dac7;
+
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Courier Prime', 'Courier New', monospace;
+  --font-serif: 'Noto Serif KR', Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f6f3eb;
+  background-image: 
+    radial-gradient(at 10% 10%, rgba(5, 150, 105, 0.05) 0px, transparent 50%),
+    radial-gradient(at 90% 90%, rgba(253, 224, 71, 0.08) 0px, transparent 50%);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* ================= APP CONTAINER ================= */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= VINTAGE IVORY NAVBAR ================= */
+.navbar-container {
+  background: rgba(246, 243, 235, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid #e4dcd0;
+  padding: 1rem 1.75rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.navbar-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  cursor: pointer;
+}
+
+.brand-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #047857, #10b981);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+}
+
+.brand-icon {
+  width: 24px;
+  height: 24px;
+  color: #ffffff;
+}
+
+.brand-title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #111827;
+}
+
+.brand-subtitle {
+  font-size: 0.76rem;
+  color: #059669;
+  font-weight: 800;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.nav-item {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #4b5563;
+  padding: 0.6rem 1.1rem;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #047857;
+  background: #fefce8;
+}
+
+.nav-item.active {
+  color: #064e3b;
+  background: #ffffff;
+  border-color: #059669;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.15);
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.archive-badge {
+  background: #059669;
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+/* ================= MAIN CONTENT CONTAINER ================= */
+.main-content {
+  flex: 1;
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* ================= STEP 1: VENDING MACHINE ================= */
+.vending-machine-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.vending-cabinet {
+  width: 100%;
+  max-width: 760px;
+  background: #ffffff;
+  border: 1.5px solid #e4dcd0;
+  border-radius: 28px;
+  padding: 2.5rem 2.25rem;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.05);
+}
+
+/* ================= STEP 2: THERMAL RECEIPT ================= */
+.receipt-view-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.receipt-section {
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.receipt-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: center;
+  margin-bottom: 1.35rem;
+  width: 100%;
+}
+
+.toolbar-btn {
+  background: #ffffff;
+  border: 1.5px solid #c4bcae;
+  color: #111827;
+  padding: 0.7rem 1.15rem;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.toolbar-btn:hover {
+  background: #fefce8;
+  color: #047857;
+  border-color: #059669;
+}
+
+.toolbar-btn.flip-btn.active {
+  background: linear-gradient(135deg, #047857, #10b981);
+  color: #ffffff;
+  border-color: #047857;
+}
+
+.toolbar-btn.archive-btn.saved {
+  background: #059669;
+  color: #ffffff;
+  border-color: #059669;
+}
+
+/* 3D FLIP CONTAINER WITH NATURAL ELEGANT PROPORTIONS */
+.receipt-3d-perspective {
+  perspective: 1000px;
+  width: 100%;
+}
+
+.receipt-card-flipper {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.receipt-card-flipper.flipped {
+  transform: rotateY(180deg);
+}
+
+.receipt-card-front,
+.receipt-card-back {
+  width: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-sizing: border-box;
+}
+
+.receipt-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+}
+
+/* VINTAGE CREAM THERMAL PAPER RECEIPT */
+.receipt-paper-body {
+  background-color: #fffefb;
+  color: #1f1e1b;
+  padding: 1.8rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  font-family: var(--font-sans);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  border-left: 1px solid #e2dac7;
+  border-right: 1px solid #e2dac7;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.serrated-edge {
+  height: 12px;
+  background-size: 16px 12px;
+  background-repeat: repeat-x;
+}
+
+.serrated-top {
+  background-image: linear-gradient(135deg, #fffefb 50%, transparent 50%),
+                    linear-gradient(225deg, #fffefb 50%, transparent 50%);
+}
+
+.serrated-bottom {
+  background-image: linear-gradient(45deg, #fffefb 50%, transparent 50%),
+                    linear-gradient(315deg, #fffefb 50%, transparent 50%);
+}
+
+/* ================= STEP 4: MY ARCHIVE DASHBOARD ================= */
+.archive-dashboard-container {
+  width: 100%;
+}
+
+.archive-stats-banner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+  margin-bottom: 1.75rem;
+}
+
+.stat-card {
+  background: #ffffff;
+  border: 1.5px solid #e4dcd0;
+  border-radius: 18px;
+  padding: 1.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.stat-icon {
+  width: 30px;
+  height: 30px;
+  color: #059669;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.archive-filter-bar {
+  background: #ffffff;
+  border: 1.5px solid #e4dcd0;
+  border-radius: 18px;
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.6rem;
+}
+
+/* ================= FOOTER ================= */
+.app-footer {
+  border-top: 1.5px solid #e4dcd0;
+  padding: 1.75rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6b7280;
+  background: #ffffff;
+}

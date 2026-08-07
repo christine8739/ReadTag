@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: readtag-backend
+  datasource:
+    url: jdbc:h2:mem:readtagdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# CORS and custom app properties
+readtag:
+  cors:
+    allowed-origins: "http://localhost:5173"
+# gemini api 키 설정
+gemini:
+  api-key: ${GEMINI_API_KEY:}
+  url: ${GEMINI_API_URL:https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent}
+# 알라딘 Open API 설정
+aladdin:
+  ttb-key: ${ALADIN_API_KEY:ttbtest}
+  search-url: ${ALADIN_SEARCH_URL:http://www.aladin.co.kr/ttb/api/ItemSearch.aspx}
+  list-url: ${ALADIN_LIST_URL:http://www.aladin.co.kr/ttb/api/ItemList.aspx}
+
